@@ -1,0 +1,9 @@
+.idea
+__pycache__/
+.pyc
+build
+.ipynb_checkpoints
+logs
+./volume
+*.tar.gz
+*.zip

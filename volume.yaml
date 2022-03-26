@@ -1,0 +1,28 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+ name: kubeflow
+ namespace: kubeflow
+spec:
+  storageClassName: microk8s-hostpath
+  capacity:
+    storage: 10Gi
+  accessModes:
+  - ReadWriteMany
+  hostPath:
+    path: "/home/cha/kubernetes-volume"
+
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+ name: kubeflow
+ namespace: kubeflow
+spec:
+ accessModes:
+ - ReadWriteMany
+ storageClassName: microk8s-hostpath
+ volumeName: kubeflow
+ resources:
+   requests:
+     storage: 10G
